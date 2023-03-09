@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+    let star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+    let check = 0
+
+    function check_arr(star) {
+        let index_star1 = 0;
+        let result = "";
+        for (let i = 0; i < star1.length; i++) {
+            if (star == star1[i]) {
+                index_star1 = i;
+                for (let j = 0; j < star2.length; j++) {
+                    if (index_star1 == j) {
+                        result = star2[j];
+                        check = 0
+                        return result;
+                        break;
+                    } else {
+                        check = 1;
+                    }
+                }
+            }
+        }
+        if (check === 0) {
+            alert("khong co chom sao nao");
+        }
+
+    }
+
+    let star = prompt("Nhập vào ngôi sao: ")
+    document.write(check_arr(star))
+
+
+</script>
+</body>
+</html>
